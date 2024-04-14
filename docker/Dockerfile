@@ -7,10 +7,10 @@ ARG TAIGA_FRONT_ROOT=/taiga
 
 ADD config/ /tmp/
 
-RUN apt update; \
-    apt add --no-cache \
+RUN apk update; \
+    apk add --no-cache \
         git; \
-    apt add --no-cache \
+    apk add --no-cache \
         jq; \        
     git clone https://github.com/taigaio/taiga-contrib-oidc-auth.git; \
     cd taiga-contrib-oidc-auth/front; \
