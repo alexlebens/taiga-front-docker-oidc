@@ -1,6 +1,6 @@
 # taiga-front-docker-oidc
 
-Taiga Front Images that includes the OpenID Plugin.
+Taiga-Front image that includes the OpenID Plugin.
 
 [taiga-front](https://github.com/taigaio/taiga-front)
 
