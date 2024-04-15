@@ -5,7 +5,7 @@ LABEL description="Taiga-Front image that includes the OpenID Plugin."
 
 ARG TAIGA_FRONT_ROOT=/usr/share/nginx/html
 
-ADD config/ /tmp/
+COPY config/config_env_subst.sh /docker-entrypoint.d/30_config_env_subst.sh
 
 RUN set -eux; \
 
@@ -23,9 +23,6 @@ RUN set -eux; \
     ./node_modules/.bin/gulp build; \
     mkdir -p ${TAIGA_FRONT_ROOT}/plugins/oidc-auth/; \
     cp --verbose -r dist/ ${TAIGA_FRONT_ROOT}/plugins/oidc-auth/; \
-
-    # Add env to enable the plugin
-    mv /tmp/config_env_subst.sh /docker-entrypoint.d/30_config_env_subst.sh; \
 
     # Remove installed apps
     apk del --no-cache \
