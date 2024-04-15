@@ -25,7 +25,7 @@ RUN set -eux; \
     cp --verbose -r dist/ ${TAIGA_FRONT_ROOT}/plugins/oidc-auth/; \
 
     # Add env to enable the plugin
-    mv /tmp/config_env_subst.sh /docker-entrypoint.d/config_env_subst.sh; \
+    mv /tmp/config_env_subst.sh /docker-entrypoint.d/30_config_env_subst.sh; \
 
     # Remove installed apps
     apk del --no-cache \
