@@ -13,7 +13,7 @@ RUN set -eux; \
     apk update; \
     apk add --no-cache \
         npm \
-        git \
+        git; \
 
     # Compile and install oidc auth
     git clone https://github.com/taigaio/taiga-contrib-oidc-auth.git; \
@@ -25,9 +25,9 @@ RUN set -eux; \
     cp --verbose -r dist/ ${TAIGA_FRONT_ROOT}/plugins/oidc-auth/; \
 
     # Add env to enable the plugin
-    mv /tmp/config_env_subst.sh /docker-entrypoint.d/config_env_subst.sh \
+    mv /tmp/config_env_subst.sh /docker-entrypoint.d/config_env_subst.sh; \
 
     # Remove installed apps
     apk del --no-cache \
         npm \
-        git \
+        git; \
