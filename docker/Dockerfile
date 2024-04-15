@@ -9,6 +9,9 @@ COPY config/config_env_subst.sh /docker-entrypoint.d/30_config_env_subst.sh
 
 RUN set -eux; \
 
+    # Enable execution on entry script
+    chmod +x /docker-entrypoint.d/30_config_env_subst.sh; \
+
     # Install needed apps
     apk update; \
     apk add --no-cache \
