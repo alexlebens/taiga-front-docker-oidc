@@ -25,7 +25,7 @@ RUN set -eux; \
     npm install gulp; \
     ./node_modules/.bin/gulp build; \
     mkdir -p ${TAIGA_FRONT_ROOT}/plugins/oidc-auth/; \
-    cp --verbose -r dist/ ${TAIGA_FRONT_ROOT}/plugins/oidc-auth/; \
+    cp --verbose -r dist/* ${TAIGA_FRONT_ROOT}/plugins/oidc-auth/; \
 
     # Remove installed apps
     apk del --no-cache \
