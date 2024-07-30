@@ -1,6 +1,6 @@
-FROM taigaio/taiga-front:6.7.7
+FROM taigaio/taiga-front:6.8.1
 
-LABEL version="6.7.7"
+LABEL version="6.8.1"
 LABEL description="Taiga-Front image that includes the OpenID Plugin."
 
 ARG TAIGA_FRONT_ROOT=/usr/share/nginx/html
